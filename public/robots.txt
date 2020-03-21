@@ -1,0 +1,3 @@
+# In development do not let this site be followed.
+User-agent: *
+disallow: *
