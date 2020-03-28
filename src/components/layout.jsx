@@ -40,6 +40,20 @@ const Layout = ({ children }) => {
           text-align: center;
           color: #ffd600;
           background: #1e1f20;
+          transition: 100ms;
+        }
+
+        nav a:hover {
+          background: rgb(47, 45, 29);
+        }
+
+        nav a:active {
+          background: rgb(97, 86, 22);
+          outline: transparent;
+        }
+
+        nav a:active:hover {
+          background: rgb(108, 95, 20);
         }
       `}</style>
     </div>
