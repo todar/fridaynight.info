@@ -17,7 +17,31 @@ const Layout = ({ children }) => {
         <Link href="/songs">
           <a>Songs</a>
         </Link>
+        <Link href="/connect">
+          <a>Connect</a>
+        </Link>
       </nav>
+      <style jsx>{`
+        nav {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          background: #1e1f20;
+        }
+
+        nav a {
+          font-family: Roboto, sans-serif;
+          padding: 20px;
+          text-decoration: none;
+          flex-grow: 1;
+          text-align: center;
+          color: #ffd600;
+          background: #1e1f20;
+        }
+      `}</style>
     </div>
   );
 };
