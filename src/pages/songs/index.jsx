@@ -20,13 +20,24 @@ import IconButton from "@material-ui/core/IconButton";
 import LikeIcon from "@material-ui/icons/Favorite";
 
 import SearchBox from "../../components/searchBox";
+import { useSearch } from "../../context/searchContext";
 
 const SongPage = ({ songList }) => {
-  console.log(songList);
+  const [{ value }] = useSearch();
+
+  const filteredList = songList.filter(song => {
+    console.log(song.data.title);
+    if (
+      song.data.title.toLowerCase().includes(value.toLowerCase()) ||
+      value === ""
+    ) {
+      return song;
+    }
+  });
   return (
     <Container maxWidth="md" disableGutters={true}>
       <List>
-        {songList.map(song => {
+        {filteredList.map(song => {
           return (
             <>
               <Link
