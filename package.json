@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/todar/fridaynight.info#readme",
   "dependencies": {
+    "@material-ui/core": "^4.9.8",
+    "@material-ui/icons": "^4.9.1",
     "firebase": "^7.12.0",
     "gray-matter": "^4.0.2",
     "marked": "^0.8.2",
