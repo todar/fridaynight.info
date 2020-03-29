@@ -32,6 +32,19 @@ const App = ({ Component, pageProps }) => {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1e1f20" />
         <meta name="msapplication-TileColor" content="#1e1f20" />
         <meta name="theme-color" content="#1e1f20" />
+
+        <meta property="og:image:width" content="1199" />
+        <meta property="og:image:height" content="628" />
+        <meta property="og:title" content="Friday Night Church" />
+        <meta
+          property="og:description"
+          content="Friday Night Church is a group that meets every Friday at Citizens Church in North Phoenix."
+        />
+        <meta property="og:url" content="https://fridaynight.info/" />
+        <meta
+          property="og:image"
+          content="https://fridaynight.info/og-image.jpg"
+        ></meta>
       </Head>
       <Layout>
         <Component {...pageProps} />
