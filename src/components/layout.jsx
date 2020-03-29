@@ -13,10 +13,17 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      {children}
-      <Navbar />
+      <main style={mainStyle}>
+        {children}
+        <Navbar />
+      </main>
     </ThemeProvider>
   );
+};
+
+const mainStyle = {
+  marginBottom: "70px",
+  marginTop: "0"
 };
 
 export default Layout;

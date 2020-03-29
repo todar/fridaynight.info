@@ -25,7 +25,7 @@ const HomePage = () => {
   return (
     <section style={sectionStyle}>
       <Container maxWidth="md">
-        <Box py={8}>
+        <Box py={4}>
           <Box marginTop={0} display="flex" justifyContent="center">
             <img src="./showcase-logo.png" alt="Friday Night Showcase Logo" />
           </Box>

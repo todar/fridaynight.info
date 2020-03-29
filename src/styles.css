@@ -1,1 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+/* This is needed as we want to
+maintain line breaks from markdown files
+but also need lines to break on overflow. */
+pre {
+  white-space: pre-wrap;
+  font-family: Roboto, sans-serif;
+}
+
+pre p {
+  margin: 0;
+  font-size: 1.3rem;
+}
