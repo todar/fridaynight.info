@@ -3,59 +3,58 @@
  * from the need of having a digital songbook.
  */
 
-import Link from "next/link";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import Link from "../../components/Link";
+import Container from "@material-ui/core/Container";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+import Avatar from "@material-ui/core/Avatar";
+import MusicNote from "@material-ui/icons/MusicNote";
+import ListItemText from "@material-ui/core/ListItemText";
+import Divider from "@material-ui/core/Divider";
+import IconButton from "@material-ui/core/IconButton";
+import LikeIcon from "@material-ui/icons/Favorite";
 
 const SongPage = ({ songList }) => {
   console.log(songList);
   return (
-    <div className="collection">
-      {songList.map(song => {
-        return (
-          <Link key={song.slug} href={"/songs/" + song.slug}>
-            <div className="collection-item">
-              <section className="title-section">
-                <span className="title">{song.data.title}</span>
-                <span className="artist">{song.data.artist}</span>
-              </section>
-            </div>
-          </Link>
-        );
-      })}
-      <style jsx>{`
-        .collection {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .collection-item {
-          display: flex;
-          align-items: center;
-          height: 60px;
-          border-bottom: 1px solid #a1a3a4;
-          padding: 0 16px;
-        }
-
-        .collection-item:active {
-          background-color: #d3d4d5;
-        }
-
-        .title-section {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .title {
-          margin-bottom: 3px;
-        }
-
-        .artist {
-          color: #717374;
-        }
-      `}</style>
-    </div>
+    <Container maxWidth="md" disableGutters={true}>
+      <List>
+        {songList.map(song => {
+          return (
+            <>
+              <Link
+                key={song.slug}
+                href={"/songs/" + song.slug}
+                style={{ textDecoration: "none" }}
+              >
+                <ListItem button>
+                  {/* <ListItemAvatar>
+                    <Avatar>
+                      <MusicNote color="primary" />
+                    </Avatar>
+                  </ListItemAvatar> */}
+                  <ListItemText
+                    primary={song.data.title}
+                    secondary={song.data.artist}
+                  />
+                  <ListItemSecondaryAction>
+                    <IconButton edge="end" aria-label="delete">
+                      <LikeIcon />
+                    </IconButton>
+                  </ListItemSecondaryAction>
+                </ListItem>
+              </Link>
+              <Divider />
+            </>
+          );
+        })}
+      </List>
+    </Container>
   );
 };
 
