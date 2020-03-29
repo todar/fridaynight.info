@@ -26,6 +26,9 @@ const HomePage = () => {
     <section style={sectionStyle}>
       <Container maxWidth="md">
         <Box py={8}>
+          <Box marginTop={0} display="flex" justifyContent="center">
+            <img src="./showcase-logo.png" alt="Friday Night Showcase Logo" />
+          </Box>
           <Card color="primary">
             <CardContent>
               <Typography variant="subtitle1" gutterBottom>
