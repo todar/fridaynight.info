@@ -19,6 +19,8 @@ import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import LikeIcon from "@material-ui/icons/Favorite";
 
+import SearchBox from "../../components/searchBox";
+
 const SongPage = ({ songList }) => {
   console.log(songList);
   return (
@@ -33,20 +35,20 @@ const SongPage = ({ songList }) => {
                 style={{ textDecoration: "none" }}
               >
                 <ListItem button>
-                  {/* <ListItemAvatar>
+                  <ListItemAvatar>
                     <Avatar>
-                      <MusicNote color="primary" />
+                      <MusicNote />
                     </Avatar>
-                  </ListItemAvatar> */}
+                  </ListItemAvatar>
                   <ListItemText
                     primary={song.data.title}
                     secondary={song.data.artist}
                   />
-                  <ListItemSecondaryAction>
+                  {/* <ListItemSecondaryAction>
                     <IconButton edge="end" aria-label="delete">
                       <LikeIcon />
                     </IconButton>
-                  </ListItemSecondaryAction>
+                  </ListItemSecondaryAction> */}
                 </ListItem>
               </Link>
               <Divider />
@@ -54,6 +56,7 @@ const SongPage = ({ songList }) => {
           );
         })}
       </List>
+      <SearchBox />
     </Container>
   );
 };
