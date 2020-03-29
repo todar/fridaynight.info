@@ -7,6 +7,7 @@ import marked from "marked";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import Divider from "@material-ui/core/Divider";
 
 const Song = ({ htmlString, data }) => {
   console.log(data.copyright);
@@ -19,27 +20,31 @@ const Song = ({ htmlString, data }) => {
           content={`Lyrics to ${data.title} by ${data.artist}`}
         />
       </Head>
-      <Box>
-        <Container>
-          <header>
-            <Box my={3}>
-              <Typography variant="h4" component="h1">
-                {data.title}
-              </Typography>
-              <Typography variant="h5" component="h2">
-                {data.artist}
-              </Typography>
-            </Box>
-          </header>
-          <Typography variant="body1">
-            <pre dangerouslySetInnerHTML={{ __html: htmlString }} />
 
-            <pre className="caption">{data.copyright}</pre>
-          </Typography>
-        </Container>
-      </Box>
+      <Container>
+        <header style={headerStyle}>
+          <Box my={3}>
+            <Typography variant="h4" component="h1">
+              {data.title}
+            </Typography>
+            <Typography variant="h5" component="h2">
+              {data.artist}
+            </Typography>
+          </Box>
+        </header>
+        <Divider style={{ background: "#ffd600" }} />
+        <Typography variant="body1">
+          <pre dangerouslySetInnerHTML={{ __html: htmlString }} />
+
+          <pre className="caption">{data.copyright}</pre>
+        </Typography>
+      </Container>
     </>
   );
+};
+
+const headerStyle = {
+  paddingTop: "10px"
 };
 
 export const getStaticPaths = async () => {
